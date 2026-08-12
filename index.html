@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fredy ❤️ Rihanie — Nuestra Historia</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+#viewerClose {
+    pointer-events: auto !important;
+    z-index: 99999 !important;
+    cursor: pointer !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09050a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   FONDO
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 70, 130, .12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(180, 70, 255, .10), transparent 30%);
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Estrellas */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: fixed;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 40% 70%, white, transparent),
+        radial-gradient(2px 2px at 70% 20%, white, transparent),
+        radial-gradient(1px 1px at 90% 80%, white, transparent),
+        radial-gradient(1px 1px at 60% 50%, white, transparent),
+        radial-gradient(2px 2px at 10% 90%, white, transparent);
+    background-size: 350px 350px;
+    animation: starsMove 25s linear infinite;
+    opacity: .5;
+}
+
+.stars::before {
+    animation-duration: 45s;
+    transform: scale(1.5);
+    opacity: .25;
+}
+
+.stars::after {
+    animation-duration: 70s;
+    transform: scale(2);
+    opacity: .15;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-350px);
+    }
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: appear 2s ease;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #f5b4ca;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(70px, 13vw, 160px);
+    font-weight: 400;
+    line-height: .9;
+    text-shadow: 0 0 35px rgba(255, 100, 150, .5);
+}
+
+.hero h1 span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 60px);
+    letter-spacing: 10px;
+    margin: 25px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 35px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #eadde3;
+}
+
+.date {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #f6b7c8;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #cdbec6;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translate(-50%,0); }
+    50% { transform: translate(-50%,10px); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BOTÓN MÚSICA
+========================= */
+
+.music-button {
+    position: fixed;
+    right: 22px;
+    top: 22px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(20,10,20,.75);
+    backdrop-filter: blur(10px);
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+    padding: 110px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title small {
+    color: #e99bb4;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.section-title h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(50px, 8vw, 85px);
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 20px auto;
+    color: #bcaeb6;
+    line-height: 1.8;
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.counter-section {
+    text-align: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    width: 130px;
+    padding: 25px 15px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.035);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.time-box strong {
+    display: block;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.time-box span {
+    display: block;
+    margin-top: 8px;
+    color: #c7b8c1;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   FRASES
+========================= */
+
+.quote {
+    max-width: 900px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 70px 30px;
+}
+
+.quote .symbol {
+    font-size: 55px;
+    color: #e88fae;
+}
+
+.quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.35;
+    color: #f1e8ed;
+}
+
+.quote small {
+    display: block;
+    margin-top: 25px;
+    color: #aa9aa4;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery {
+    max-width: 1250px;
+    margin: auto;
+    columns: 4 220px;
+    column-gap: 18px;
+}
+
+.photo {
+    break-inside: avoid;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #140b12;
+}
+
+.photo img {
+    width: 100%;
+    display: block;
+    transition: transform .7s ease, filter .7s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.06);
+    filter: brightness(.72);
+}
+
+.photo::after {
+    content: "♡";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    opacity: 0;
+    transition: .4s;
+}
+
+.photo:hover::after {
+    opacity: 1;
+}
+
+/* =========================
+   VIDEOS
+========================= */
+
+.video-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.video-card {
+    position: relative;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.video-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,150,180,.35);
+}
+
+.video-card video {
+    width: 100%;
+    display: block;
+    background: black;
+}
+
+.video-caption {
+    padding: 18px;
+    text-align: center;
+    color: #d9cbd2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.letter {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 50px;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 25px;
+    box-shadow: 0 30px 100px rgba(0,0,0,.35);
+}
+
+.letter h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #f0a9bd;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.letter p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    line-height: 1.8;
+    color: #e8dde2;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 12vw, 130px);
+    font-weight: 400;
+}
+
+.final p {
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    line-height: 1.5;
+    color: #d9cbd2;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    color: #eda8bc;
+    margin-top: 35px;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 25px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(255,100,150,.25);
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+/* =========================
+   CORAZONES
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -20px;
+    color: #ef8fac;
+    font-size: 18px;
+    animation: floatHeart linear forwards;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px) {
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .gallery {
+        columns: 2 140px;
+        column-gap: 10px;
+    }
+
+    .photo {
+        margin-bottom: 10px;
+    }
+
+    .letter {
+        padding: 40px 25px;
+    }
+
+    .letter p {
+        font-size: 20px;
+    }
+
+    .time-box {
+        width: 100px;
+        padding: 20px 10px;
+    }
+
+    .time-box strong {
+        font-size: 28px;
+    }
+}
+
+/* ==============================
+   VISOR DE FOTOS
+   ============================== */
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    padding: 30px;
+}
+
+.photo-viewer.active {
+    display: flex;
+}
+
+#viewerImage {
+    max-width: 85%;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+
+    animation: photoZoom 0.3s ease;
+}
+
+@keyframes photoZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.viewer-close,
+.viewer-prev,
+.viewer-next {
+    position: absolute;
+
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.viewer-close:hover,
+.viewer-prev:hover,
+.viewer-next:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.viewer-close {
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 35px;
+}
+
+.viewer-prev,
+.viewer-next {
+    top: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 45px;
+}
+
+.viewer-prev {
+    left: 25px;
+}
+
+.viewer-next {
+    right: 25px;
+}
+
+.viewer-counter {
+    position: absolute;
+
+    bottom: 25px;
+
+    color: white;
+
+    font-size: 16px;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- =========================
+     MÚSICA
+========================= -->
+
+<button class="music-button" id="musicButton">♫</button>
+
+<audio id="music" loop>
+    <!--
+    COLOCA AQUÍ TU ARCHIVO DE MÚSICA.
+
+    Ejemplo:
+    <source src="musica/until-i-found-you.mp3" type="audio/mpeg">
+
+    -->
+</audio>
+
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Nuestra historia
+        </div>
+
+        <h1>
+            Fredy
+            <span>♡</span>
+            Rihanie
+        </h1>
+
+        <p>
+            Dos corazones, una historia,
+            y miles de momentos que todavía
+            nos quedan por vivir.
+        </p>
+
+        <div class="date">
+            23 • 03 • 2026
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        DESLIZA PARA COMENZAR ↓
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CONTADOR
+========================= -->
+
+<section class="counter-section">
+
+    <div class="section-title">
+
+        <small>Desde aquel día</small>
+
+        <h2>El tiempo contigo</h2>
+
+        <p>
+            Desde el momento en que comenzó nuestra historia,
+            cada día se convirtió en un recuerdo que vale la pena guardar.
+        </p>
+
+    </div>
+
+    <div class="counter">
+
+        <div class="time-box">
+            <strong id="days">0</strong>
+            <span>Días</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="hours">0</strong>
+            <span>Horas</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="minutes">0</strong>
+            <span>Minutos</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="seconds">0</strong>
+            <span>Segundos</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<div class="quote">
+
+    <div class="symbol">“</div>
+
+    <p>
+        De todas las casualidades que pudo regalarme la vida,
+        qué bonita fue aquella que terminó llevándome hasta ti.
+    </p>
+
+    <small>
+        PARA MI RIRI ❤️
+    </small>
+
+</div>
+
+
+<!-- =========================
+     FOTOS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>35 recuerdos</small>
+
+        <h2>Nuestros momentos</h2>
+
+        <p>
+            Algunas fotografías pueden parecer simples imágenes,
+            pero para nosotros guardan historias enteras.
+        </p>
+
+    </div>
+
+
+    <div class="gallery" id="gallery">
+
+        <!--
+        LAS 37 FOTOS SE GENERAN AUTOMÁTICAMENTE
+        foto01.jpg hasta foto37.jpg
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     POEMA
+========================= -->
+
+<div class="quote">
+
+    <div class="symbol">♡</div>
+
+    <p>
+        No quiero solamente recordar los momentos que vivimos;
+        quiero seguir creando momentos que algún día
+        extrañemos recordar.
+    </p>
+
+    <small>
+        ONE LOVE • TOGETHER AS ONE
+    </small>
+
+</div>
+
+
+<!-- =========================
+     VIDEOS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>23 momentos</small>
+
+        <h2>Momentos que cobran vida</h2>
+
+        <p>
+            Porque algunas memorias no necesitan una fotografía.
+            A veces necesitan volver a moverse,
+            volver a escucharse y volver a sentirse.
+        </p>
+
+    </div>
+
+
+    <div class="video-grid" id="videoGrid">
+
+        <!--
+        LOS 23 VIDEOS SE GENERAN AUTOMÁTICAMENTE
+        video01.mp4 hasta video23.mp4
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<div class="quote">
+
+    <div class="symbol">“</div>
+
+    <p>
+        Quizás el destino no escribió nuestros nombres juntos.
+        Quizás simplemente nos dio la oportunidad
+        de escribirlos nosotros.
+    </p>
+
+    <small>
+        FREDY & RIHANIE
+    </small>
+
+</div>
+
+
+<!-- =========================
+     CARTA
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>Una carta para ti</small>
+
+        <h2>Mi amorcito</h2>
+
+    </div>
+
+
+    <div class="letter">
+
+        <h3>Para mi Riri...</h3>
+
+        <p>
+            No sé exactamente en qué momento comenzaste
+            a convertirte en una parte tan importante de mi vida.
+        </p>
+
+        <p>
+            Solo sé que desde aquel 23 de marzo de 2026
+            hay recuerdos que tienen tu nombre,
+            canciones que me recuerdan a ti
+            y momentos que automáticamente se vuelven
+            más bonitos porque estabas conmigo.
+        </p>
+
+        <p>
+            Gracias por cada sonrisa, cada conversación,
+            cada abrazo, cada tontería que nos hizo reír
+            y cada pequeño momento que hemos compartido.
+        </p>
+
+        <p>
+            Quizás estas 37 fotografías y estos 23 videos
+            parezcan solamente archivos,
+            pero para mí son pedacitos de nuestra historia.
+        </p>
+
+        <p>
+            Y lo más bonito es saber que todavía faltan
+            muchísimos recuerdos por crear.
+        </p>
+
+        <p>
+            Si algún día volvemos a mirar esta página,
+            quiero que podamos sonreír y decir:
+            <strong>“Mira todo lo que hemos vivido.”</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+    <div>
+
+        <div class="small-title">
+            Y esto apenas comienza...
+        </div>
+
+        <h2>
+            One Love
+        </h2>
+
+        <p>
+            35 fotografías pueden mostrar algunos recuerdos.
+            23 videos pueden hacer que algunos vuelvan a cobrar vida.
+            Pero nada de eso puede explicar completamente
+            lo que significas para mí.
+        </p>
+
+        <p>
+            Porque nuestra historia todavía tiene
+            muchísimas páginas por escribir.
+        </p>
+
+        <div class="signature">
+            Fredy ♡ Rihanie
+        </div>
+
+        <div class="date">
+            23 • 03 • 2026
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <button
+    type="button"
+    class="close"
+    id="close"
+    onclick="document.getElementById('lightbox').style.display='none'; document.body.style.overflow='';"
+>
+    ×
+</button>
+
+    <img id="lightboxImg" src="" alt="Recuerdo">
+
+</div>
+
+
+<!-- VISOR DE FOTOS -->
+<div id="photoViewer" class="photo-viewer">
+
+    <button
+    type="button"
+    id="viewerClose"
+    class="viewer-close"
+    style="z-index:999999 !important; pointer-events:auto !important;"
+    onclick="alert('LA X FUNCIONA');"
+>
+    X
+</button>
+
+    <img id="viewerImage" src="" alt="Recuerdo">
+
+    <button class="viewer-next" id="viewerNext">›</button>
+
+    <div class="viewer-counter" id="viewerCounter">
+        1 / 35
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CONTADOR
+========================= */
+
+const startDate = new Date("2026-03-23T00:00:00");
+
+function updateCounter() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const seconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(seconds / 86400);
+
+    const hours = Math.floor((seconds % 86400) / 3600);
+
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    const secs = seconds % 60;
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(secs).padStart(2, "0");
+}
+
+setInterval(updateCounter, 1000);
+
+updateCounter();
+
+
+/* =========================
+   GENERAR FOTOS
+========================= */
+
+const gallery = document.getElementById("gallery");
+
+for (let i = 1; i <= 35; i++) {
+
+    const number = String(i).padStart(2, "0");
+
+    const div = document.createElement("div");
+
+    div.className = "photo";
+
+    div.innerHTML = `
+        <img
+            src="fotos/foto${number}.jpeg"
+            alt="Recuerdo ${number}"
+            loading="lazy"
+        >
+    `;
+
+    gallery.appendChild(div);
+
+}
+
+
+/* =========================
+   GENERAR VIDEOS
+========================= */
+
+const videoGrid = document.getElementById("videoGrid");
+
+const captions = [
+
+    "Un momento que quiero recordar siempre ❤️",
+    "Una sonrisa que vale millones",
+    "Otro pedacito de nuestra historia",
+    "Contigo todo se siente diferente",
+    "Un recuerdo para volver a vivir",
+    "Nosotros siendo nosotros",
+    "Un momento pequeño, un recuerdo enorme",
+    "De esos momentos que no se olvidan",
+    "Una historia que sigue escribiéndose",
+    "Tú haces especial cualquier momento",
+    "Una memoria más para nosotros",
+    "Porque contigo nunca falta una sonrisa",
+    "Otro instante que guardo en el corazón",
+    "Momentos que hablan por sí solos",
+    "Simplemente nosotros ❤️",
+    "Un recuerdo que quiero conservar",
+    "La felicidad también se ve así",
+    "Contigo",
+    "Un momento más de nuestra historia",
+    "One love",
+    "Together as one",
+    "Mi lugar favorito",
+    "Siempre tú"
+];
+
+for (let i = 1; i <= 23; i++) {
+
+    const number = String(i).padStart(2, "0");
+
+    const card = document.createElement("div");
+
+    card.className = "video-card";
+
+    card.innerHTML = `
+        <video
+            controls
+            preload="metadata"
+            playsinline
+        >
+            <source
+                src="videos/video${number}.mp4"
+                type="video/mp4"
+            >
+            Tu navegador no puede reproducir este video.
+        </video>
+
+        <div class="video-caption">
+            ${captions[i - 1]}
+        </div>
+    `;
+
+    videoGrid.appendChild(card);
+
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImg = document.getElementById("lightboxImg");
+
+const close = document.getElementById("close");
+
+document.addEventListener("click", function(e) {
+
+    const photo = e.target.closest(".photo");
+
+    if (!photo) return;
+
+    const img = photo.querySelector("img");
+
+    lightboxImg.src = img.src;
+
+    lightbox.classList.add("active");
+
+});
+
+
+// ========================================
+// REPRODUCCIÓN AUTOMÁTICA DE VIDEOS
+// ========================================
+
+const videos = document.querySelectorAll("#videoGrid video");
+
+videos.forEach((video, index) => {
+
+    // Todos los videos empiezan sin sonido
+    video.muted = true;
+    video.playsInline = true;
+
+    // Cuando termine este video...
+    video.addEventListener("ended", function () {
+
+        // Buscar el siguiente
+        const siguiente = videos[index + 1];
+
+        if (siguiente) {
+
+            siguiente.muted = true;
+            siguiente.currentTime = 0;
+
+            // Reproducir automáticamente el siguiente
+            siguiente.play().catch(error => {
+                console.log("No se pudo reproducir automáticamente:", error);
+            });
+        }
+
+    });
+
+});
+
+// Comenzar con el primer video
+if (videos.length > 0) {
+    videos[0].muted = true;
+    videos[0].play().catch(error => {
+        console.log("El navegador bloqueó el autoplay:", error);
+    });
+}
+
+// ========================================
+// VISOR DE FOTOS
+// ========================================
+
+const galleryPhotos = document.querySelectorAll(".gallery .photo img");
+
+const photoViewer = document.getElementById("photoViewer");
+const viewerImage = document.getElementById("viewerImage");
+
+const viewerClose = document.getElementById("viewerClose");
+const viewerPrev = document.getElementById("viewerPrev");
+const viewerNext = document.getElementById("viewerNext");
+
+const viewerCounter = document.getElementById("viewerCounter");
+
+let currentPhoto = 0;
+
+
+// Abrir foto
+galleryPhotos.forEach((photo, index) => {
+
+    photo.addEventListener("click", () => {
+
+        currentPhoto = index;
+
+        showPhoto();
+
+        photoViewer.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+// Mostrar foto
+function showPhoto() {
+
+    viewerImage.src = galleryPhotos[currentPhoto].src;
+
+    viewerCounter.textContent =
+        `${currentPhoto + 1} / ${galleryPhotos.length}`;
+
+}
+
+
+// Siguiente
+viewerNext.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    currentPhoto++;
+
+    if (currentPhoto >= galleryPhotos.length) {
+        currentPhoto = 0;
+    }
+
+    showPhoto();
+
+});
+
+
+// Anterior
+viewerPrev.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    currentPhoto--;
+
+    if (currentPhoto < 0) {
+        currentPhoto = galleryPhotos.length - 1;
+    }
+
+    showPhoto();
+
+});
+
+
+// Cerrar visor con la X
+viewerClose.addEventListener("click", function(event) {
+    event.stopPropagation();
+
+    photoViewer.classList.remove("active");
+
+    photoViewer.style.display = "none";
+    photoViewer.style.opacity = "0";
+    photoViewer.style.visibility = "hidden";
+    photoViewer.style.pointerEvents = "none";
+
+    document.body.style.overflow = "";
+});
+
+
+// Cerrar haciendo clic fuera de la foto
+photoViewer.addEventListener("click", (event) => {
+
+    if (event.target === photoViewer) {
+
+        photoViewer.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+
+// Teclado
+document.addEventListener("keydown", (event) => {
+
+    if (!photoViewer.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "ArrowRight") {
+        viewerNext.click();
+    }
+
+    if (event.key === "ArrowLeft") {
+        viewerPrev.click();
+    }
+
+    if (event.key === "Escape") {
+        viewerClose.click();
+    }
+
+});
+
+
+viewerClose.addEventListener("click", () => {
+    photoViewer.classList.remove("active");
+});
+
+
+
+</script>
+
+</body>
+</html>
