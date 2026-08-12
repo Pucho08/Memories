@@ -688,10 +688,10 @@ section {
      MÚSICA
 ========================= -->
 
-<button class="music-button" id="musicButton">♫</button>
+<button id="musicBtn" type="button">🎵 Música</button>
 
-<audio id="music" loop>
-    <!--
+<audio id="musica" controls>
+    <source src="musica/cancion.mp3" type="">    <!--
     COLOCA AQUÍ TU ARCHIVO DE MÚSICA.
 
     Ejemplo:
@@ -879,6 +879,148 @@ section {
 
 
     <div class="video-grid" id="videoGrid">
+
+        <div class="video-grid">
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos/video01.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos/video02.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos/video03.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos/video04.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos/video05.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos02/video06.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos02/video07.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos02/video08.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos02/video09.mp4 " type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video10.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video11.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video12.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video13.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video14.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="video03/video15.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos04/video16.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos04/video17.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos04/video18.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos04/video19.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos05/video20.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos05/video21.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos05/video22.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <video controls>
+            <source src="videos05/video23.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
 
         <!--
         LOS 23 VIDEOS SE GENERAN AUTOMÁTICAMENTE
@@ -1161,35 +1303,6 @@ const captions = [
     "Siempre tú"
 ];
 
-for (let i = 1; i <= 23; i++) {
-
-    const number = String(i).padStart(2, "0");
-
-    const card = document.createElement("div");
-
-    card.className = "video-card";
-
-    card.innerHTML = `
-        <video
-            controls
-            preload="metadata"
-            playsinline
-        >
-            <source
-                src="videos/video${number}.mp4"
-                type="video/mp4"
-            >
-            Tu navegador no puede reproducir este video.
-        </video>
-
-        <div class="video-caption">
-            ${captions[i - 1]}
-        </div>
-    `;
-
-    videoGrid.appendChild(card);
-
-}
 
 
 /* =========================
@@ -1393,6 +1506,29 @@ viewerClose.addEventListener("click", () => {
 });
 
 
+const musicBtn = document.getElementById("musicBtn");
+const musica = document.getElementById("musica");
+
+musicBtn.onclick = function () {
+
+    if (musica.paused) {
+        musica.muted = false;
+
+        musica.play()
+            .then(() => {
+                musicBtn.textContent = "⏸️ Pausar música";
+            })
+            .catch(error => {
+                console.log("Error al reproducir:", error);
+                alert("No se pudo reproducir la música. Revisa el nombre del archivo MP3.");
+            });
+
+    } else {
+        musica.pause();
+        musicBtn.textContent = "🎵 Música";
+    }
+
+};
 
 </script>
 
